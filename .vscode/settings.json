@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "**/models/**/*.sql": "jinja-sql",
+    "**/snapshots/**/*.sql": "jinja-sql",
+    "**/macros/**/*.sql": "jinja-sql",
+    "**/seeds/**/*.sql": "jinja-sql"
+  }
+}

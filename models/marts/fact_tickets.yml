@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: fact_tickets
+    description: >
+      A fact table that combines ticket sales data with customer feedback for haunted house visits.
+      This table contains one row per ticket sold, with optional feedback information if the customer
+      provided a review.
+
+    columns:
+      - name: ticket_id
+        description: Unique identifier for each ticket sold
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: Foreign key to the customer dimension
+        tests:
+          - not_null
+
+      - name: haunted_house_id
+        description: Foreign key to the haunted house dimension
+        tests:
+          - not_null
+
+      - name: ticket_type
+        description: Type of ticket purchased (e.g., standard, VIP, group)
+
+      - name: ticket_price
+        description: Price paid for the ticket in dollars
+
+      - name: visit_date
+        description: Date when the customer visited the haunted house
+
+      - name: days_to_halloween
+        description: Number of days until Halloween for October visits, null for other months
+
+      - name: visit_time_of_day
+        description: >
+          Categorization of visit time (Morning: 9-12, Afternoon: 13-17, Evening: 18-21, Night: other)
+
+      - name: group_category
+        description: >
+          Categorization of group size (Large: >4, Medium: 3-4, Small: 1-2)
+
+      - name: price_per_person
+        description: Price per person calculated by dividing ticket price by group size
+
+      - name: rating
+        description: Customer rating of the experience (1-5 stars)
+
+      - name: would_recommend
+        description: Boolean indicating if the customer would recommend the experience
+
+      - name: felt_scared
+        description: Boolean indicating if the customer felt scared during the experience
+
+      - name: worth_the_price
+        description: Boolean indicating if the customer felt the experience was worth the price
+
+      - name: ticket_updated_at
+        description: Timestamp of when the ticket record was last updated
+
+      - name: feedback_updated_at
+        description: Timestamp of when the feedback record was last updated

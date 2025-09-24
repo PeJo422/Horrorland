@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: dim_haunted_houses
+    description: >
+      A dimension table containing information about haunted house attractions.
+      This table includes details about each haunted house's theme, fear level,
+      requirements, and physical characteristics. Used for analyzing attraction
+      performance and customer preferences.
+
+    columns:
+      - name: haunted_house_id
+        description: Unique identifier for each haunted house attraction
+        tests:
+          - unique
+          - not_null
+
+      - name: house_name
+        description: The name of the haunted house attraction
+        tests:
+          - not_null
+
+      - name: theme
+        description: The horror theme or concept of the haunted house
+        tests:
+          - not_null
+
+      - name: fear_level
+        description: The intensity level of the haunted house (1-5, where 5 is the most intense)
+        tests:
+          - not_null
+
+      - name: duration_category
+        description: >
+          Categorization of the haunted house duration (Short: <15min, Medium: 15-30min, Long: >31min)
+        tests:
+          - not_null
+
+      - name: fear_category
+        description: >
+          Categorization of the fear level (Extreme: 4-5, High: 3, Medium: 2, Low: 1)
+        tests:
+          - not_null
+
+      - name: size_category
+        description: >
+          Categorization of the house size (Large: >=5000sqft, Medium: 3000-4999sqft, Small: <3000sqft)
+        tests:
+          - not_null

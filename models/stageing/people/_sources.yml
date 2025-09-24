@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: people
+    database: RAW_DATABASE
+    schema: people
+    config:
+      freshness:
+        warn_after: {count: 12, period: hour}
+        error_after: {count: 24, period: hour}
+
+
+    tables:
+      - name: customers
+        columns:
+          - name: customer_id
+            tests:
+              - not_null
+              - unique
+
+      - name: customer_feedbacks
+        columns:
+          - name: feedback_id
+            tests:
+              - not_null
+              - unique
+          - name: ticket_id
+            tests:
+              - not_null
+              - unique

@@ -1,0 +1,14 @@
+version: "1"
+context:
+  active-host: "ra910.us1.dbt.com"
+  active-project: "70471823500518"
+projects:
+  - project-name: "Horrorland"
+    project-id: "70471823500518"
+    account-name: "Horrorland"
+    account-id: "70471823488443"
+    account-host: "ra910.us1.dbt.com"
+    token-name: "cloud-cli-68b3"
+    token-value: "dbtu_Mbw-8tsa6WPA5st-9SvhSdQlHzqQqbF6m2RpqviaQCux9Tobig"
+
+

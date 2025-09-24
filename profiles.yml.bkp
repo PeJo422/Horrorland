@@ -1,0 +1,13 @@
+horrorland:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      schema: pejo
+      role: SYSADMIN
+      password: f1gs-balloons-RENAULT
+      warehouse: CUMPUTE_WH
+      user: pejo422
+      threads: 16
+      database: HorrorDB
+      account: ERKFJXO-OLB82614
