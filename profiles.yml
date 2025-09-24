@@ -3,11 +3,12 @@ horrorland:
   outputs:
     dev:
       type: snowflake
-      user: pejo422
+      user: PEJO422
       threads: 16
       schema: pejo
       warehouse: COMPUTE_WH
       role: ACCOUNTADMIN
-      account: ERKFJXO-OLB82614
+      account: JDMVWUC-TL57637
       password: f1gs-balloons-RENAULT
       database: HorrorDB
+
