@@ -1,5 +1,6 @@
 name: Horrorland
-    
+dbt-cloud:
+    project-id: 70471823500518
 profile: horrorland
 
 seed-paths: ["seeds"]
