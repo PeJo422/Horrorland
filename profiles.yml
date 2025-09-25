@@ -5,9 +5,9 @@ horrorland:
       type: snowflake
       user: pejo422
       threads: 16
-      schema: pejo
+      schema: dbt_pejo
       warehouse: COMPUTE_WH
       role: ACCOUNTADMIN
-      account: ERKFJXO-OLB82614
-      password: f1gs-balloons-RENAULT
-      database: HorrorDB
+      account: JDMVWUC-TL57637
+      password: "{{ env_var('SNOWFLAKE_PWD') }}"
+      database: RAW_DATABASE
