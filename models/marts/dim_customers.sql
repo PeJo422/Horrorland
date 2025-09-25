@@ -20,7 +20,7 @@ with
 select
     customer_id
     , age
-    , CAST(email as NVARCHAR(255)) as email
+    , email
     , case
         when regexp_like(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$')
             and length(email) - length(regexp_replace(email, '@', '')) = 1
