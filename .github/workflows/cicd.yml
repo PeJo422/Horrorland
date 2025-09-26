@@ -21,16 +21,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install requirements
-        run: pip install dbt-snowflake sqlfluff sqlfluff-templaters-dbt
+        run: pip install dbt-snowflake sqlfluff-templater-dbt 
 
       - name: Install dbt dependencies
         run: dbt deps
 
       - name: Run lint check
-        run: sqlfluff lint models --templater dbt --dialect snowflake
+        run: sqlfluff lint models\
 
       - name: Run dbt tests
         run: dbt test --profiles-dir ./
-
-      - name: Run dbt models
-        run: dbt run --profiles-dir ./
