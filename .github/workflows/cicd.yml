@@ -27,7 +27,7 @@ jobs:
         run: dbt deps
 
       - name: Run lint check
-        run: sqlfluff lint models\ --dialect snowflake --templater jinja
+        run: sqlfluff lint models --dialect snowflake
 
       - name: Run dbt tests
         run: dbt test --profiles-dir ./
