@@ -6,13 +6,11 @@ on:
   workflow_dispatch:
 
 env:
-  SNOWFLAKE_ACCOUNT: JDMVWUC-TL57637
-  SNOWFLAKE_USER: svc_cicd
-  SNOWFLAKE_PASSWORD: MySuperSecret-P@55w0rd
-  SNOWFLAKE_ROLE: ACCOUNTADMIN
-  SNOWFLAKE_WAREHOUSE: COMPUTE_WH
-  SNOWFLAKE_SCHEMA: dbt_pejo
-  SNOWFLAKE_DATABASE: RAW_DATABASE
+  SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+  SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+  SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+  SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+  SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
 
 jobs:
   dbt_ci:
@@ -29,7 +27,7 @@ jobs:
         run: dbt deps
 
       - name: Run lint check
-        run: sqlfluff lint models\
+        run: sqlfluff lint models\ --dialect snowflake --templater jinja
 
       - name: Run dbt tests
         run: dbt test --profiles-dir ./
