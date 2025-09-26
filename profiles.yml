@@ -3,11 +3,21 @@ horrorland:
   outputs:
     dev:
       type: snowflake
-      user: pejo422
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
       threads: 16
       schema: dbt_pejo
       warehouse: COMPUTE_WH
       role: ACCOUNTADMIN
-      account: JDMVWUC-TL57637
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       password: "{{ env_var('SNOWFLAKE_PWD') }}"
       database: RAW_DATABASE
+    
+    prod:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PWD') }}"
+      role: PROD_ROLE
+      database: HORRORDB
+      schema: analytics
+      threads: 4
