@@ -4,7 +4,7 @@ horrorland:
     dev:
       type: snowflake
       user: "{{ env_var('SNOWFLAKE_USER') }}"
-      threads: 16
+      threads: 4
       schema: dbt_pejo
       warehouse: COMPUTE_WH
       role: ACCOUNTADMIN
