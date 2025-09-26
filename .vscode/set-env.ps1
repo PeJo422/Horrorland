@@ -3,8 +3,8 @@
 try {
     $pwd = op read "op://Labs-Sandboxes/SnowflakeDemo/password" 2>$null
     if (-not $pwd) { throw "Failed to fetch Snowflake password from 1Password" }
-    $env:SNOWFLAKE_PWD = $pwd
-    Write-Host "SET SNOWFLAKE_PWD from 1Password"
+    $env:SNOWFLAKE_PASSWORD = $pwd
+    Write-Host "SET SNOWFLAKE_PASSWORD from 1Password"
 
     $account = op read "op://Labs-Sandboxes/SnowflakeDemo/add more/AccountId" 2>$null
     if (-not $account) { throw "Failed to fetch Snowflake account from 1Password" }
