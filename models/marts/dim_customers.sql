@@ -10,7 +10,7 @@ customer_data as (
         email,
         gender,
         is_vip_member,
-        preferred_scare_level,
+        ,preferred_scare_level
         registration_date
     from {{ ref('stg_people__customers') }}
     where dbt_valid_to is null

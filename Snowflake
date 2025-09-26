@@ -1,0 +1,7 @@
+
+-- Create a user in snowflake for CI/CD pipelines
+-- with ACCOUNTADMIN role for demo purposes only
+-- In production, follow the principle of least privilege
+-- and assign only the necessary roles and privileges
+CREATE USER svc_cicd PASSWORD = 'MySuperSecret-P@55w0rd' DEFAULT_ROLE = ACCOUNTADMIN MUST_CHANGE_PASSWORD = FALSE;
+GRANT ROLE ACCOUNTADMIN TO USER svc_cicd;
