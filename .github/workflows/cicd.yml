@@ -24,14 +24,14 @@ jobs:
         run: pip install dbt-snowflake sqlfluff-templater-dbt
 
       - name: Install dbt dependencies
-        run: dbt deps
+        run: dbtf deps
 
       - name: Run lint check
         run: sqlfluff lint models --dialect snowflake
 
       - name: Run dbt test
-        run: dbt test --profiles-dir ./
+        run: dbtf test --profiles-dir ./
 
-      - name: dbt run
-        run: dbt run --profiles-dir ./
+      - name: dbtf run
+        run: dbtf run --profiles-dir ./
         
