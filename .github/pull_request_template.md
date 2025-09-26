@@ -18,7 +18,7 @@ Describe your changes, and why you're making them. Is this linked to an open
 
 issue, a Trello card, or another pull request? Link it here.
 
--->
+--> 
 
 ## To-do before merge
 
