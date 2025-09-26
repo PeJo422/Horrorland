@@ -16,6 +16,19 @@ try {
     $env:SNOWFLAKE_USER = $user
     Write-Host "SET SNOWFLAKE_USER from 1Password"
 
+    $role = "ACCOUNTADMIN"
+    $env:SNOWFLAKE_ROLE = $role
+    Write-Host "SET SNOWFLAKE_ROLE to $role"
+
+    $schema = "DBT_PEJO"
+    $env:SNOWFLAKE_SCHEMA = $schema
+
+    $DB = "RAW_DATABASE"
+    $env:SNOWFLAKE_DB = $DB
+    Write-Host "SET SNOWFLAKE_DB to $DB"
+
+    
+
 } catch {
     Write-Error $_
     exit 1

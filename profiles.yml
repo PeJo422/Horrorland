@@ -7,10 +7,10 @@ horrorland:
       threads: 4
       schema: dbt_pejo
       warehouse: COMPUTE_WH
-      role: ACCOUNTADMIN
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
-      database: RAW_DATABASE
+      database: "{{ env_var('SNOWFLAKE_DB') }}"
     
     prod:
       type: snowflake
