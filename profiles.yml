@@ -17,7 +17,7 @@ horrorland:
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
       user: "{{ env_var('SNOWFLAKE_USER') }}"
       password: "{{ env_var('SNOWFLAKE_PWD') }}"
-      role: PROD_ROLE
+      role: ACCOUNTADMIN
       database: HORRORDB
       schema: analytics
       threads: 4
