@@ -9,7 +9,7 @@ horrorland:
       warehouse: COMPUTE_WH
       role: ACCOUNTADMIN
       account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
-      password: "{{ env_var('SNOWFLAKE_PWD') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
       database: RAW_DATABASE
     
     prod:
